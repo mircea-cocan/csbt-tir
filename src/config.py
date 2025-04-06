@@ -55,13 +55,28 @@ class Config():
                     if 'target' in s:
                         targetRun = eval(s['target'])
 
+                    # speed loop (pour vitesse 25m)
+                    speedLoop = 1
+                    if 'speed_loop' in s:
+                        speedLoop = s['speed_loop']
+
+                    # action attention
+                    attentionAction = True
+                    if 'attention_action' in s:
+                        attentionAction = eval(s['attention_action'])
+
+                    # beep
+                    beep = True
+                    if 'beep' in s:
+                        beep = eval(s['beep'])
+
                     #create series
                     for i in range(nbSeries):
                         title = s['title']
                         if nbSeries > 1:
                             title = title + " (" + str(i+1) + "/" + str(nbSeries) + ")"
 
-                        serie = Serie(title, s['duration'], load_duration, target, sound, soundFile, targetRun)
+                        serie = Serie(title, s['duration'], load_duration, target, beep, sound, soundFile, speedLoop, attentionAction, targetRun)
                         match.series.append(serie)
 
                 group.matches.append(match)

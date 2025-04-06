@@ -34,8 +34,8 @@
                 {
                     "title":"PISTOLET/REVOLVER\n(830/832)",
                     "series":[
-                        { "title":"SERIE D'ESSAI EN 3 MINUTES", "duration":180, "loop":1, "sound":"essai_3minutes.mp3", "target":"False" },
-                        { "title":"SERIE MATCH 2x5 COUPS EN 7 MINUTES", "duration":420, "loop":2, "sound":"match_2x5coups_7minutes.mp3", "target":"False" },
+                        { "title":"SERIE D'ESSAI EN 3 MINUTES", "duration":180, "loop":1, "attention_action":"False", "sound":"essai_3minutes.mp3", "target":"False" },
+                        { "title":"SERIE MATCH 2x5 COUPS EN 7 MINUTES", "duration":420, "loop":2, "attention_action":"False", "sound":"match_2x5coups_7minutes.mp3", "target":"False" },
                         { "title":"SERIE GONGS EN 20 SECONDES", "duration":20, "loop":2, "sound":"gongs_20secondes.mp3", "target":"False" },
                         { "title":"SERIE GONGS EN 10 SECONDES", "duration":10, "loop":2, "sound":"gongs_10secondes.mp3", "target":"False" }
                     ]
@@ -69,7 +69,7 @@
                         { "title":"SERIE D'ESSAI EN 8 SECONDES", "duration":8, "load":10, "loop":1, "sound":"essai_8secondes.mp3", "target":"True" },
                         { "title":"SERIE MATCH EN 8 SECONDES", "duration":8, "load":10, "loop":2, "sound":"match_8secondes.mp3", "target":"True" },
                         { "title":"SERIE MATCH EN 6 SECONDES", "duration":6, "load":10, "loop":2, "sound":"match_6secondes.mp3", "target":"True" },
-                        { "title":"SERIE MATCH EN 4 SECONDES", "duration":4, "load":10, "loop":2, "sound":"match_4secondes.mp3", "target":"True" }
+                        { "title":"SERIE MATCH EN 4 SECONDES", "duration":4, "load":10, "loop":2, "beep":"False", "speed_loop":5, "sound":"match_4secondes.mp3", "target":"True" }
                     ]
                 }
             ]
@@ -81,8 +81,8 @@
                 {
                     "title":"TRAINING TAR\n(830/832)",
                     "series":[
-                        { "title":"SERIE D'ESSAI EN 3 MINUTES", "duration":180, "load":10, "loop":1, "sound":"essai_3minutes.mp3", "target":"False" },
-                        { "title":"SERIE MATCH 2x5 COUPS EN 7 MINUTES", "duration":420, "load":10, "loop":2, "sound":"match_2x5coups_7minutes.mp3", "target":"False" },
+                        { "title":"SERIE D'ESSAI EN 3 MINUTES", "duration":180, "load":10, "loop":1, "attention_action":"False", "sound":"essai_3minutes.mp3", "target":"False" },
+                        { "title":"SERIE MATCH 2x5 COUPS EN 7 MINUTES", "duration":420, "load":10, "loop":2, "attention_action":"False", "sound":"match_2x5coups_7minutes.mp3", "target":"False" },
                         { "title":"SERIE GONGS EN 20 SECONDES", "duration":20, "load":10, "loop":2, "sound":"gongs_20secondes.mp3", "target":"False" },
                         { "title":"SERIE GONGS EN 10 SECONDES", "duration":10, "load":10, "loop":2, "sound":"gongs_10secondes.mp3", "target":"False" }
                     ]
