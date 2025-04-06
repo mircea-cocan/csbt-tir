@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=UpdateTir
+Exec=/home/mircea/tir/update.sh

@@ -1,0 +1,68 @@
+import json
+from serie import Serie
+from match import Match
+from group import Group
+
+#----------------------------------------------
+# Class pour la gestion de la configuration
+#----------------------------------------------
+class Config():
+    #----------------------------------------------
+    # Construteur de la classe
+    #----------------------------------------------
+    def __init__(self):
+        # Open and read the JSON file
+        with open('config.json', 'r') as file:
+            self.data = json.load(file)
+
+        # load groups
+        self.groups = []
+    
+    #----------------------------------------------
+    # Chargement des matches à partir du fichier config.json
+    #----------------------------------------------
+    def loadMatches(self, target, sound):
+        for g in self.data['groups']:
+            tab = 'Match'
+            if 'tab' in g:
+                tab = g['tab']
+
+            group = Group(g['title'], tab)    
+            # load matches
+            for m in g['matches']:
+                match = Match(m['title'])
+                # load series
+                for s in m['series']:
+                    # series count
+                    nbSeries = 1
+                    if 'loop' in s:
+                        nbSeries = s['loop']
+
+                    # serie sound file
+                    soundFileName = 'chargez.mp3'
+                    if 'sound' in s:
+                        soundFileName = s['sound']
+
+                    soundFile = sound.loadSerieSound(soundFileName)
+
+                    # load duration
+                    load_duration = 60
+                    if 'load' in s:
+                        load_duration = s['load']
+
+                    # target run On/Off
+                    targetRun = True
+                    if 'target' in s:
+                        targetRun = eval(s['target'])
+
+                    #create series
+                    for i in range(nbSeries):
+                        title = s['title']
+                        if nbSeries > 1:
+                            title = title + " (" + str(i+1) + "/" + str(nbSeries) + ")"
+
+                        serie = Serie(title, s['duration'], load_duration, target, sound, soundFile, targetRun)
+                        match.series.append(serie)
+
+                group.matches.append(match)
+            self.groups.append(group)
