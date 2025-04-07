@@ -18,8 +18,8 @@
                     "series":[
                         { "title":"SERIE D'ESSAI PRECISION EN 5 MINUTES", "duration":300, "loop":1, "sound":"essai_5mn.mp3", "target":"True" },
                         { "title":"SERIE MATCH PRECISION EN 5 MINUTES", "duration":300, "loop":6, "sound":"match_5mn.mp3", "target":"True" },
-                        { "title":"SERIE D'ESSAI VITESSE 3/7 SECONDES", "duration":3, "loop":1, "sound":"essai_vitesse3_7s.mp3", "target":"True" },
-                        { "title":"SERIE MATCH VITESSE 3/7 SECONDES", "duration":3, "loop":6, "sound":"match_vitesse3_7s.mp3", "target":"True" }
+                        { "title":"SERIE D'ESSAI VITESSE 3/7 SECONDES", "duration":3, "loop":1, "speed_loop":5, "beep":"False", "sound":"essai_vitesse3_7s.mp3", "target":"True" },
+                        { "title":"SERIE MATCH VITESSE 3/7 SECONDES", "duration":3, "loop":6, "speed_loop":5, "beep":"False", "sound":"match_vitesse3_7s.mp3", "target":"True" }
                                              
                         
                         
@@ -58,18 +58,18 @@
                 "title":"TRAINING STANDARD",
                 "series":[
                     { "title":"SERIE D'ESSAI EN 2 MINUTES 30", "duration":150, "load":10, "loop":1, "sound":"essai_2minutes30.mp3", "target":"True" },
-                    { "title":"SERIE MATCH EN 2 MINUTES 30", "duration":150, "load":10, "loop":2, "sound":"match_2minutes30.mp3", "target":"True" },
-                    { "title":"SERIE MATCH EN 20 SECONDES", "duration":20, "load":10, "loop":2, "sound":"match_20secondes.mp3", "target":"True" },
-                    { "title":"SERIE MATCH EN 10 SECONDES", "duration":10, "load":10, "loop":2, "sound":"match_10secondes.mp3", "target":"True" }
+                    { "title":"SERIE MATCH EN 2 MINUTES 30", "duration":150, "load":10, "loop":4, "sound":"match_2minutes30.mp3", "target":"True" },
+                    { "title":"SERIE MATCH EN 20 SECONDES", "duration":20, "load":10, "loop":4, "sound":"match_20secondes.mp3", "target":"True" },
+                    { "title":"SERIE MATCH EN 10 SECONDES", "duration":10, "load":10, "loop":4, "sound":"match_10secondes.mp3", "target":"True" }
                 ]
                 },
                 {
-                    "title":"TRAINING 25M VITESSE",
+                    "title":"TRAINING 25M",
                     "series":[
-                        { "title":"SERIE D'ESSAI EN 8 SECONDES", "duration":8, "load":10, "loop":1, "sound":"essai_8secondes.mp3", "target":"True" },
-                        { "title":"SERIE MATCH EN 8 SECONDES", "duration":8, "load":10, "loop":2, "sound":"match_8secondes.mp3", "target":"True" },
-                        { "title":"SERIE MATCH EN 6 SECONDES", "duration":6, "load":10, "loop":2, "sound":"match_6secondes.mp3", "target":"True" },
-                        { "title":"SERIE MATCH EN 4 SECONDES", "duration":4, "load":10, "loop":2, "beep":"False", "speed_loop":5, "sound":"match_4secondes.mp3", "target":"True" }
+                        { "title":"SERIE D'ESSAI PRECISION EN 5 MINUTES", "load":10, "duration":300, "loop":1, "sound":"essai_5mn.mp3", "target":"True" },
+                        { "title":"SERIE MATCH PRECISION EN 5 MINUTES", "load":10, "duration":300, "loop":6, "sound":"match_5mn.mp3", "target":"True" },
+                        { "title":"SERIE D'ESSAI VITESSE 3/7 SECONDES", "load":10, "duration":3, "loop":1, "speed_loop":5, "sound":"essai_vitesse3_7s.mp3", "target":"True" },
+                        { "title":"SERIE MATCH VITESSE 3/7 SECONDES", "load":10, "duration":3, "loop":6, "speed_loop":5, "sound":"match_vitesse3_7s.mp3", "target":"True" }
                     ]
                 }
             ]
