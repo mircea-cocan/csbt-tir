@@ -166,6 +166,7 @@ class MainWindow(QMainWindow):
         self.buttonPlay = self.addImageButton(layout, 4, "play.png", lambda x: self.play())
         self.buttonStop = self.addImageButton(layout, 5, "stop.png", lambda x: self.stop())
         self.buttonReset = self.addImageButton(layout, 6, "reset.png", lambda x: self.reset())
+        self.buttonEndAction = self.addImageButton(layout, 7, "eaction.png", lambda x: self.endAction())
         self.buttonPrev = self.addImageButton(layout, 8, "prev.png", lambda x: self.prev())
         self.buttonNext = self.addImageButton(layout, 9, "next.png", lambda x: self.next())
 
@@ -269,7 +270,10 @@ class MainWindow(QMainWindow):
                 case 3:
                     self.prev()
                 case 4:
-                    self.next()
+                    if self.isRunning:
+                        self.endAction()
+                    else:    
+                        self.next()
 
     #----------------------------------------------
     # set running status (on, off)
@@ -280,12 +284,14 @@ class MainWindow(QMainWindow):
             self.buttonPlay.setEnabled(False)
             self.buttonStop.setEnabled(True)
             self.buttonReset.setEnabled(True)
+            self.buttonEndAction.setEnabled(True)
             
             self.buttonTargetSwitch.setEnabled(False)
         else:
             self.buttonPlay.setEnabled(True)
             self.buttonStop.setEnabled(False)
             self.buttonReset.setEnabled(False)
+            self.buttonEndAction.setEnabled(False)
 
             self.buttonTargetSwitch.setEnabled(True)
               
@@ -301,12 +307,19 @@ class MainWindow(QMainWindow):
     # Démarrage de la série
     #----------------------------------------------
     def play(self):
-        if not self.isRunning :
+        if not self.isRunning and self.match.currentSerie != None :
             if self.match.currentSerie.action >= 5:
                 self.reset()
 
             self.setRunning(True)
             self.timer.start(1000)
+
+    #----------------------------------------------
+    # Fin de l'action en cours
+    #----------------------------------------------
+    def endAction(self):
+        if self.isRunning and self.match.currentSerie != None :
+            self.match.currentSerie.endAction()
 
     #----------------------------------------------
     # Arrêt de la série

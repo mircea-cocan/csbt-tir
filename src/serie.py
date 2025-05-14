@@ -29,6 +29,14 @@ class Serie():
         self.inProgress = False
         self.speed_loop_pos = 1
 
+
+    #----------------------------------------------
+    # Fin de l'action en cours
+    #----------------------------------------------
+    def endAction(self):
+        if self.action == 1 or self.action == 3:
+            self.counter = 1
+
     #----------------------------------------------
     # Retourne le texte correspondant à l'action en cours
     #----------------------------------------------
