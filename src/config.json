@@ -7,6 +7,56 @@
                 {
                 "title":"PISTOLET STANDARD",
                 "series":[
+                    { "title":"SERIE D'ESSAI EN 2 MINUTES 30", "duration":150, "loop":1, "beep":"False", "sound":"essai_2minutes30.mp3", "target":"True" },
+                    { "title":"SERIE MATCH EN 2 MINUTES 30", "duration":150, "loop":4, "beep":"False", "sound":"match_2minutes30.mp3", "target":"True" },
+                    { "title":"SERIE MATCH EN 20 SECONDES", "duration":20, "loop":4, "beep":"False", "sound":"match_20secondes.mp3", "target":"True" },
+                    { "title":"SERIE MATCH EN 10 SECONDES", "duration":10, "loop":4, "beep":"False", "sound":"match_10secondes.mp3", "target":"True" }
+                ]
+                },
+                {
+                    "title":"PISTOLET 25M",
+                    "series":[
+                        { "title":"SERIE D'ESSAI PRECISION EN 5 MINUTES", "duration":300, "loop":1, "beep":"False", "sound":"essai_5mn.mp3", "target":"True" },
+                        { "title":"SERIE MATCH PRECISION EN 5 MINUTES", "duration":300, "loop":6, "beep":"False", "sound":"match_5mn.mp3", "target":"True" },
+                        { "title":"SERIE D'ESSAI VITESSE 3/7 SECONDES", "duration":3, "loop":1, "speed_loop":5, "beep":"False", "sound":"essai_vitesse3_7s.mp3", "target":"True" },
+                        { "title":"SERIE MATCH VITESSE 3/7 SECONDES", "duration":3, "loop":6, "speed_loop":5, "beep":"False", "sound":"match_vitesse3_7s.mp3", "target":"True" }
+                                             
+                        
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "title":"TAR",
+            "tab":"Match",
+            "matches":[
+                {
+                    "title":"PISTOLET/REVOLVER\n(830/832)",
+                    "series":[
+                        { "title":"SERIE D'ESSAI EN 3 MINUTES", "duration":180, "loop":1, "attention_action":"False", "beep":"False", "sound":"essai_3minutes.mp3", "target":"False" },
+                        { "title":"SERIE MATCH 2x5 COUPS EN 7 MINUTES", "duration":420, "loop":2, "attention_action":"False", "beep":"False", "sound":"match_2x5coups_7minutes.mp3", "target":"False" },
+                        { "title":"SERIE GONGS EN 20 SECONDES", "duration":20, "loop":2, "beep":"False", "sound":"gongs_20secondes.mp3", "target":"False" },
+                        { "title":"SERIE GONGS EN 10 SECONDES", "duration":10, "loop":2, "beep":"False", "sound":"gongs_10secondes.mp3", "target":"False" }
+                    ]
+                },
+                {
+                    "title":"VITESSE REGLEMENTAIRE\n(831)",
+                    "series":[
+                        { "title":"SERIE D'ESSAI EN 20 SECONDES", "duration":20, "loop":1, "beep":"False", "sound":"essai_20secondes.mp3", "target":"False" },
+                        { "title":"SERIE MATCH EN 20 SECONDES", "duration":20, "loop":2, "beep":"False", "sound":"match_20secondes.mp3", "target":"False" },
+                        { "title":"SERIE MATCH EN 10 SECONDES", "duration":10, "loop":2, "beep":"False", "sound":"match_10secondes.mp3", "target":"False" }
+                    ]
+                }
+            ]
+        },
+        {
+            "title":"Pistolet 25m",
+            "tab":"Match beep",
+            "matches":[
+                {
+                "title":"PISTOLET STANDARD",
+                "series":[
                     { "title":"SERIE D'ESSAI EN 2 MINUTES 30", "duration":150, "loop":1, "sound":"essai_2minutes30.mp3", "target":"True" },
                     { "title":"SERIE MATCH EN 2 MINUTES 30", "duration":150, "loop":4, "sound":"match_2minutes30.mp3", "target":"True" },
                     { "title":"SERIE MATCH EN 20 SECONDES", "duration":20, "loop":4, "sound":"match_20secondes.mp3", "target":"True" },
@@ -29,7 +79,7 @@
         },
         {
             "title":"TAR",
-            "tab":"Match",
+            "tab":"Match beep",
             "matches":[
                 {
                     "title":"PISTOLET/REVOLVER\n(830/832)",
