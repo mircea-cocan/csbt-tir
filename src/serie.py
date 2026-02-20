@@ -2,13 +2,13 @@
 # Class pour toutes les series
 #----------------------------------------------
 class Serie():
-    def __init__(self, title, duration, load_duration, target, beep, sound, sound_file, speed_loop, attention_action, target_run=True, auto_pause=True):
+    def __init__(self, title, duration, load_duration, target, beep, sound, sound_file_name, speed_loop, attention_action, target_run=True, auto_pause=True):
         self.title = title
         self.duration = duration
         self.load_duration = load_duration
         self.index = 1
         self.beep = beep
-        self.sound_file = sound_file
+        self.sound_file_name = sound_file_name
         self.target_run = target_run
         self.auto_pause = auto_pause
         self.action = 0 # 0 - new, 1 - chargez, 2 - attention, 3 - tirez, 4 - stop, 5 - tir terminé
@@ -118,12 +118,12 @@ class Serie():
                     self.counter = 0 # CHARGEZ - green
                     if self.target_run:
                         self.target.start()
-                    self.sound.playSerieSound(self.sound_file)
+                    self.sound.playSerieSound(self.sound_file_name)
                 case 1:
                     self.counter = self.load_duration # CHARGEZ - red
                     if self.target_run:
                         self.target.start()
-                    self.sound.playSerieSound(self.sound_file)
+                    self.sound.playSerieSound(self.sound_file_name)
                 case 2:
                     self.counter = 7 # ATTENTION - red
                     if self.target_run:

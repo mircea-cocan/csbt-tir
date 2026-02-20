@@ -1,4 +1,5 @@
 {
+    "sounds":[{"title":"Femme", "folder":"sound/Woman"}, {"title":"Homme", "folder":"sound/Man"}, {"title":"Orc", "folder":"sound/Orc"}],
     "groups":[
         {
             "title":"Pistolet 25m",

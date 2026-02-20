@@ -1,2 +1,3 @@
-cp /media/mircea/ESD-USB/tir/*.py /home/mircea/tir
-cp /media/mircea/ESD-USB/tir/*.png /home/mircea/tir
+cp -R /media/mircea/ESD-USB/tir/* /home/mircea/tir
+cp -R /home/mircea/tir/* /media/mircea/ESD-USB/tir
+

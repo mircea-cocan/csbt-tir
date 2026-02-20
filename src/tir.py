@@ -1,8 +1,8 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QPushButton, QWidget, QLabel, QStackedLayout, QVBoxLayout, QTabWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QPushButton, QWidget, QLabel, QStackedLayout, QVBoxLayout, QTabWidget, QComboBox, QListView
 from PyQt5 import QtCore
 from PyQt5 import QtGui
-from PyQt5.QtCore import QTimer,QDateTime
+from PyQt5.QtCore import QTimer, QDateTime, Qt, QSize
 
 from target import Target
 from remote import Remote
@@ -32,6 +32,7 @@ class MainWindow(QMainWindow):
         # -----------------------------------------------
         # init sound
         self.sound = Sound()
+        self.sound.setFolder(self.config.soundFolders[0])
 
         # init Remote
         self.remote = Remote(self.remoteHandler, self.pinRemote)
@@ -78,6 +79,8 @@ class MainWindow(QMainWindow):
 
         menuAllLayout.addWidget(menuTab, 0, 0, 4, 9)
         self.addImageButton(menuAllLayout, 0, "exit.png", lambda x: self.close())
+
+        self.createSoundComboBox(menuAllLayout, 2)
 
         # Init panneau central de la fenêtre
         menuAllPanel = QWidget()
@@ -212,6 +215,44 @@ class MainWindow(QMainWindow):
         button.clicked.connect(lambda x: self.startMatch(match))
         layout.addWidget(button, 2, position)
         return button
+
+    #----------------------------------------------
+    # Création de la combo box pour la sélection du son
+    #----------------------------------------------
+    def createSoundComboBox(self, layout, position):
+        label = QLabel("Son")
+        label.setAlignment(Qt.AlignCenter)
+        comboBox = QComboBox()
+        comboBox.setFixedHeight(50)
+        comboBox.setFixedWidth(300)
+
+        # Forcer la vue de la popup (important sous Windows)
+        lv = QListView(comboBox)
+        comboBox.setView(lv)
+
+        # Agrandir la "case" de chaque item
+        lv.setGridSize(QSize(0, 50))   # 70px de hauteur par item
+        lv.setSpacing(0)
+        lv.setMinimumHeight(180)
+
+        # Optionnel : padding + police
+        lv.setStyleSheet("""
+            QListView::item { padding: 10px; font-size: 20px; }
+        """)
+
+        comboBox.addItems(self.config.soundTitles)
+
+        comboBox.currentIndexChanged.connect(self.soundComboBoxIndexChanged)
+        layout.addWidget(label, 5, position)
+        layout.addWidget(comboBox, 5, position+1)
+        return comboBox
+
+    #----------------------------------------------
+    # Evenement de changement du son (index)
+    #----------------------------------------------
+    def soundComboBoxIndexChanged(self, i):
+        self.sound.setFolder(self.config.soundFolders[i])
+        
 
     #----------------------------------------------
     # Affiche les informations en cours

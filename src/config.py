@@ -17,7 +17,14 @@ class Config():
 
         # load groups
         self.groups = []
-    
+
+        self.soundTitles = []
+        self.soundFolders = []
+
+        for s in self.data['sounds']:
+             self.soundTitles.append(s['title'])
+             self.soundFolders.append(s['folder'])
+  
     #----------------------------------------------
     # Chargement des matches à partir du fichier config.json
     #----------------------------------------------
@@ -43,7 +50,7 @@ class Config():
                     if 'sound' in s:
                         soundFileName = s['sound']
 
-                    soundFile = sound.loadSerieSound(soundFileName)
+                    #soundFile = sound.loadSerieSound(soundFileName)
 
                     # load duration
                     load_duration = 60
@@ -76,7 +83,7 @@ class Config():
                         if nbSeries > 1:
                             title = title + " (" + str(i+1) + "/" + str(nbSeries) + ")"
 
-                        serie = Serie(title, s['duration'], load_duration, target, beep, sound, soundFile, speedLoop, attentionAction, targetRun)
+                        serie = Serie(title, s['duration'], load_duration, target, beep, sound, soundFileName, speedLoop, attentionAction, targetRun)
                         match.series.append(serie)
 
                 group.matches.append(match)
